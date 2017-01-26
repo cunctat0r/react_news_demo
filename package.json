@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/cunctat0r/react_news_demo.git"
-  }
+  },
   "scripts": {
     "start": "node server.js"
   },
