@@ -1,4 +1,36 @@
+var Comments = React.createClass({
+	render: function() {
+		return (
+			<div className="comment">
+			Нет новостей -- комментировать нечего.
+			</div>
+		);
+	}
+});
+
+var News = React.createClass({
+	render: function() {
+		return (
+			<div className="news">
+			К сожалению, новостей нет.
+			</div>
+		);
+	}
+});
+
+var App = React.createClass({
+	render: function() {
+		return (
+			<div className="app">
+			Всем привет, я компонент App! Теперь я умею отображать новости.
+			<News />
+			<Comments />
+			</div>
+		);
+	}
+});
+
 ReactDOM.render(
-	<h1>Привет, миррр!</h1>,
+	<App />,
 	document.getElementById('root')
 );
