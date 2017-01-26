@@ -13,6 +13,8 @@ var my_news = [
 	}
 ];
 
+//my_news = [];
+
 var Comments = React.createClass({
 	render: function() {
 		return (
@@ -26,7 +28,7 @@ var Comments = React.createClass({
 var News = React.createClass({
 	render: function() {
 		var data = this.props.data;
-		var newsTemplate = data.map(
+		var newsTemplate = data.length > 0 ? data.map(
 			function(item, index) {
 				return(
 					<div key={index}>
@@ -35,10 +37,15 @@ var News = React.createClass({
 					</div>
 				)
 			}
-		);
+		) : <p> К сожалению, новостей нет </p>;
+
+		var allNews = (data.length > 0) ?
+					<strong>Всего новостей: {data.length}</strong> :
+					"";
 		return (
 			<div className="news">
 			{newsTemplate}
+			{allNews}
 			</div>
 		);
 	}
